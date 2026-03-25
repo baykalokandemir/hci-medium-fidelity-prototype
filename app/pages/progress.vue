@@ -19,11 +19,13 @@
                 <div class="flex justify-between text-xs font-medium text-slate-400 mb-2 absolute top-0 w-full">
                     <span>Beginner</span><span>Elementary</span><span>Intermediate</span><span>Advanced</span>
                 </div>
-                <div class="h-4 bg-slate-100 rounded-full overflow-hidden flex">
-                    <div class="h-full bg-brand w-[35%]"></div>
-                    <div class="h-full border-l border-slate-300 border-dashed w-[25%]"></div>
-                    <div class="h-full border-l border-slate-300 border-dashed w-[20%]"></div>
-                    <div class="h-full border-l border-slate-300 border-dashed w-[20%]"></div>
+                <div class="h-4 bg-slate-100 rounded-full overflow-hidden flex relative">
+                    <div class="h-full bg-brand w-[35%] z-10"></div>
+                    <div class="absolute inset-0 flex">
+                        <div class="h-full border-r border-slate-300 border-dashed w-[25%]"></div>
+                        <div class="h-full border-r border-slate-300 border-dashed w-[25%]"></div>
+                        <div class="h-full border-r border-slate-300 border-dashed w-[25%]"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,9 +39,7 @@
                     </div>
                     <span class="font-semibold text-slate-700">{{ topic.title }}</span>
                 </div>
-                <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
-                    <div class="h-full bg-brand" :style="{ width: topic.progress }"></div>
-                </div>
+                <ProgressBar :percentage="topic.progress" height="h-2" />
             </div>
         </div>
     </div>
@@ -49,11 +49,11 @@
 import { BarChart2, Flame, Briefcase, Coffee, Award, Plane, Globe, Users } from 'lucide-vue-next'
 
 const topics = [
-    { title: "Office Talk",  icon: Briefcase, progress: "60%" },
-    { title: "Cooking",      icon: Coffee,    progress: "85%" },
-    { title: "Sports",       icon: Award,     progress: "30%" },
-    { title: "Travel",       icon: Plane,     progress: "45%" },
-    { title: "News & Events",icon: Globe,     progress: "20%" },
-    { title: "Family",       icon: Users,     progress: "70%" },
+    { title: "Office Talk",  icon: Briefcase, progress: 60 },
+    { title: "Cooking",      icon: Coffee,    progress: 85 },
+    { title: "Sports",       icon: Award,     progress: 30 },
+    { title: "Travel",       icon: Plane,     progress: 45 },
+    { title: "News & Events",icon: Globe,     progress: 20 },
+    { title: "Family",       icon: Users,     progress: 70 },
 ]
 </script>

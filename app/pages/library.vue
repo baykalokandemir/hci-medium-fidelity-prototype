@@ -9,23 +9,16 @@
         </div>
 
         <div class="space-y-4">
-            <NuxtLink v-for="show in shows" :key="show.title" to="/series" class="bg-white rounded-xl border border-slate-200 p-4 flex flex-col sm:flex-row gap-6 items-center shadow-sm hover:border-brand transition-colors group block">
-                <div class="w-full sm:w-48 aspect-video relative rounded-lg overflow-hidden flex-shrink-0">
-                    <img :src="show.img" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
-                </div>
-                <div class="flex-1 w-full">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h4 class="text-lg font-bold text-slate-800 group-hover:text-brand transition-colors">{{ show.title }}</h4>
-                            <p class="text-sm text-slate-500">{{ show.episode }}</p>
-                        </div>
-                        <span :class="[libraryTab === 'completed' ? 'bg-green-50 text-green-600 border-green-100' : 'bg-indigo-50 text-brand border-indigo-100', 'px-2.5 py-1 text-xs font-bold rounded border']">{{ tabs.find(t => t.id === libraryTab)?.label }}</span>
-                    </div>
-                    <div class="h-2 bg-slate-100 rounded-full overflow-hidden relative">
-                        <div :class="[libraryTab === 'completed' ? 'bg-green-500' : 'bg-brand', 'h-full']" :style="{ width: libraryTab === 'completed' ? '100%' : show.progress }"></div>
-                    </div>
-                </div>
-            </NuxtLink>
+            <ShowCard 
+                v-for="show in shows" :key="show.title" 
+                layout="horizontal"
+                :show="{ title: show.title, subtitle: show.episode, img: show.img, progress: libraryTab === 'completed' ? 100 : parseInt(show.progress) }" 
+                :progressColor="libraryTab === 'completed' ? 'bg-green-500' : 'bg-brand'"
+            >
+                <template #badge>
+                    <span :class="[libraryTab === 'completed' ? 'bg-green-50 text-green-600 border-green-100' : 'bg-indigo-50 text-brand border-indigo-100', 'px-2.5 py-1 text-xs font-bold rounded border']">{{ tabs.find(t => t.id === libraryTab)?.label }}</span>
+                </template>
+            </ShowCard>
         </div>
     </div>
 </template>
@@ -43,9 +36,9 @@ const tabs = [
 ]
 
 const shows = [
-    { title: "City Chronicles", episode: "Season 1, Episode 3", img: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=400&q=80", progress: "40%" },
-    { title: "Family Ties",     episode: "Season 2, Episode 7", img: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=400&q=80", progress: "75%" },
-    { title: "Morning News",    episode: "Season 3, Episode 1", img: "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=400&q=80", progress: "15%" },
-    { title: "The Great Bake",  episode: "Season 1, Episode 5", img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=400&q=80", progress: "90%" }
+    { title: "City Chronicles", episode: "Season 1, Episode 3", img: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=400&q=80", progress: "40" },
+    { title: "Family Ties",     episode: "Season 2, Episode 7", img: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=400&q=80", progress: "75" },
+    { title: "Morning News",    episode: "Season 3, Episode 1", img: "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=400&q=80", progress: "15" },
+    { title: "The Great Bake",  episode: "Season 1, Episode 5", img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=400&q=80", progress: "90" }
 ]
 </script>

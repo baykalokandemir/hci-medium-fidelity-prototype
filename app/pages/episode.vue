@@ -63,7 +63,7 @@
                     <!-- Dual Ratings -->
                     <div class="flex items-center gap-3 mb-3">
                         <span class="flex items-center gap-1.5 bg-indigo-50 border border-indigo-100 px-2.5 py-1 rounded-lg">
-                            <Star class="w-3.5 h-3.5 text-yellow-500 fill-current" />
+                            <StarRating :rating="4.1" :maxStars="1" />
                             <span class="font-bold text-slate-800 text-sm">4.1</span>
                             <span class="text-slate-400 text-xs">LinguaTV</span>
                         </span>
@@ -83,92 +83,51 @@
                         <HelpCircle class="w-6 h-6 text-brand" /> Mid-Episode Quiz
                     </h3>
                     <div class="space-y-6">
-                        <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200">
-                            <div class="flex justify-between mb-4">
-                                <span class="text-xs font-bold text-slate-400 uppercase">True / False</span>
-                                <span class="text-xs font-bold text-brand">Q1</span>
-                            </div>
-                            <p class="font-medium text-slate-700 mb-5">Did the neighbor use formal language ("U") when speaking to the landlord?</p>
-                            <div class="grid grid-cols-2 gap-4">
-                                <button class="p-3 border border-brand bg-indigo-50 text-brand font-medium rounded-lg flex items-center justify-center gap-2"><Check class="w-4 h-4" /> True</button>
-                                <button class="p-3 border border-slate-200 hover:bg-slate-50 text-slate-600 font-medium rounded-lg flex items-center justify-center gap-2"><X class="w-4 h-4" /> False</button>
-                            </div>
-                        </div>
-                        <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 opacity-50 pointer-events-none">
-                            <div class="flex justify-between mb-4">
-                                <span class="text-xs font-bold text-slate-400 uppercase">Multiple Choice</span>
-                                <span class="text-xs font-bold text-brand">Q2</span>
-                            </div>
-                            <p class="font-medium text-slate-700 mb-5">What does "gezellig" imply in the context of their living room?</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <div class="p-3 border border-slate-200 rounded-lg">A. Expensive</div>
-                                <div class="p-3 border border-slate-200 rounded-lg">B. Crowded</div>
-                                <div class="p-3 border border-slate-200 rounded-lg">C. Cozy & warm</div>
-                                <div class="p-3 border border-slate-200 rounded-lg">D. Modern</div>
-                            </div>
-                        </div>
+                        <QuizCard 
+                            title="True / False" 
+                            questionNumber="Q1" 
+                            question='Did the neighbor use formal language ("U") when speaking to the landlord?'
+                            :options="[{ text: 'True', icon: Check }, { text: 'False', icon: X }]"
+                        />
+                        <QuizCard 
+                            title="Multiple Choice" 
+                            questionNumber="Q2" 
+                            question='What does "gezellig" imply in the context of their living room?'
+                            :options="['A. Expensive', 'B. Crowded', 'C. Cozy & warm', 'D. Modern']"
+                            disabled
+                        />
                     </div>
                 </div>
 
                 <!-- Episode Reviews -->
                 <div>
                     <h2 class="text-2xl font-bold text-slate-800 mb-6">Rate This Episode</h2>
-                    <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-6 mb-6">
-                        <h3 class="font-semibold text-slate-800 mb-4">Leave a Review</h3>
-                        <div class="flex items-center gap-2 mb-3 text-slate-300">
-                            <Star v-for="s in 5" :key="s" class="w-6 h-6 hover:text-yellow-400 cursor-pointer transition-colors" />
-                        </div>
-                        <textarea placeholder="How was the language difficulty? Any memorable scenes or phrases?" class="w-full p-4 border border-slate-300 rounded-xl outline-none focus:ring-2 focus:ring-brand mb-4 h-24 resize-none bg-white"></textarea>
-                        <div class="flex justify-end">
-                            <button class="px-6 py-2 bg-slate-800 text-white rounded-lg text-sm font-medium hover:bg-slate-900">Submit Review</button>
-                        </div>
-                    </div>
+                    <ReviewInput placeholder="How was the language difficulty? Any memorable scenes or phrases?" />
                     <div class="space-y-4">
-                        <div class="bg-white p-5 border border-slate-200 rounded-xl">
-                            <div class="flex justify-between items-start mb-2">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 bg-brand rounded-full text-white flex items-center justify-center text-xs font-bold">MK</div>
-                                    <span class="font-semibold text-slate-800">Maria K.</span>
-                                </div>
-                                <div class="flex text-yellow-500">
-                                    <Star v-for="s in 4" :key="s" class="w-4 h-4 fill-current" />
-                                    <Star class="w-4 h-4 text-slate-300" />
-                                </div>
-                            </div>
-                            <p class="text-slate-600 text-sm">The lobby scene was perfect for practicing formal vs informal greetings. The vocabulary notes matched exactly what I needed!</p>
-                        </div>
+                        <ReviewCard 
+                            author="Maria K."
+                            avatarInitials="MK"
+                            :rating="4.5"
+                            text="The lobby scene was perfect for practicing formal vs informal greetings. The vocabulary notes matched exactly what I needed!"
+                        />
                     </div>
                 </div>
             </div>
 
             <!-- Language Notes Sidebar -->
             <div class="lg:w-1/3 space-y-6">
-                <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
-                    <h4 class="font-bold text-slate-800 mb-4 border-b pb-2 flex items-center gap-2">
-                        <BookOpen class="w-5 h-5 text-brand" /> Language Notes
-                    </h4>
-                    <ul class="space-y-4 text-sm">
-                        <li class="group">
-                            <div class="font-bold text-slate-700 mb-1 flex justify-between">Huisbaas <PlusCircle class="w-4 h-4 text-slate-300 group-hover:text-brand cursor-pointer" /></div>
-                            <div class="text-slate-500">Landlord</div>
-                        </li>
-                        <li class="group">
-                            <div class="font-bold text-slate-700 mb-1 flex justify-between">Kennismaken <PlusCircle class="w-4 h-4 text-slate-300 group-hover:text-brand cursor-pointer" /></div>
-                            <div class="text-slate-500">To get acquainted / meet</div>
-                        </li>
-                        <li class="group">
-                            <div class="font-bold text-slate-700 mb-1 flex justify-between">Huurcontract <PlusCircle class="w-4 h-4 text-slate-300 group-hover:text-brand cursor-pointer" /></div>
-                            <div class="text-slate-500">Rental contract</div>
-                        </li>
-                    </ul>
-                </div>
+                <LanguageNotes :notes="[
+                    { term: 'Huisbaas', definition: 'Landlord' },
+                    { term: 'Kennismaken', definition: 'To get acquainted / meet' },
+                    { term: 'Huurcontract', definition: 'Rental contract' }
+                ]"/>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import { ArrowLeft, Play, ChevronLeft, ChevronRight, ExternalLink, ChevronDown, Bookmark, Star, HelpCircle, Check, X, BookOpen, PlusCircle } from 'lucide-vue-next'
+import { ArrowLeft, Play, ChevronLeft, ChevronRight, ExternalLink, ChevronDown, Bookmark, HelpCircle, Check, X } from 'lucide-vue-next'
 import { computed } from 'vue'
 
 const { openSaveListModal, carouselIndex } = useAppState()

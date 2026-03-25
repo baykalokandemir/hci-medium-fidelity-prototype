@@ -20,7 +20,7 @@
                                     <span>Drama</span>
                                     <span class="text-slate-500">•</span>
                                     <span class="flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1 rounded-lg">
-                                        <Star class="w-3.5 h-3.5 text-yellow-400 fill-current" />
+                                        <StarRating :rating="4.3" :maxStars="1" />
                                         <span class="font-bold text-white">4.3</span>
                                         <span class="text-slate-300 text-xs">LinguaTV</span>
                                     </span>
@@ -78,39 +78,22 @@
         <div>
             <h2 class="text-2xl font-bold text-slate-800 mb-6">User Reviews</h2>
 
-            <!-- Leave a Review -->
-            <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-6 mb-8">
-                <h3 class="font-semibold text-slate-800 mb-4">Leave a Review</h3>
-                <div class="flex items-center gap-2 mb-3 text-slate-300">
-                    <Star v-for="s in 5" :key="s" class="w-6 h-6 hover:text-yellow-400 cursor-pointer transition-colors" />
-                </div>
-                <textarea placeholder="How was the language level? Did you enjoy the plot?" class="w-full p-4 border border-slate-300 rounded-xl outline-none focus:ring-2 focus:ring-brand mb-4 h-24 resize-none"></textarea>
-                <div class="flex justify-end">
-                    <button class="px-6 py-2 bg-slate-800 text-white rounded-lg text-sm font-medium hover:bg-slate-900">Submit Review</button>
-                </div>
-            </div>
+            <ReviewInput />
 
-            <!-- Review List -->
             <div class="space-y-4">
-                <div class="bg-white p-5 border border-slate-200 rounded-xl">
-                    <div class="flex justify-between items-start mb-2">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 bg-brand rounded-full text-white flex items-center justify-center text-xs font-bold">JD</div>
-                            <span class="font-semibold text-slate-800">Jane Doe</span>
-                        </div>
-                        <div class="flex text-yellow-500">
-                            <Star v-for="s in 5" :key="s" class="w-4 h-4 fill-current" />
-                        </div>
-                    </div>
-                    <p class="text-slate-600 text-sm">Excellent dictation speed. It perfectly bridges the gap between A2 and B1. I actually used the phrase from episode 3 at work yesterday!</p>
-                </div>
+                <ReviewCard 
+                    author="Jane Doe"
+                    avatarInitials="JD"
+                    :rating="5"
+                    text="Excellent dictation speed. It perfectly bridges the gap between A2 and B1. I actually used the phrase from episode 3 at work yesterday!"
+                />
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import { ArrowLeft, Star, Play, PlayCircle, Bookmark, ChevronRight } from 'lucide-vue-next'
+import { ArrowLeft, Play, PlayCircle, Bookmark, ChevronRight } from 'lucide-vue-next'
 
 const { openSaveListModal } = useAppState()
 </script>

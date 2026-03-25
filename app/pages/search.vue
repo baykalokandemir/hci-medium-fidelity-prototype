@@ -28,15 +28,7 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <NuxtLink v-for="i in 6" :key="i" to="/series" class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-md transition-shadow group block">
-                <div class="aspect-video relative overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
-                </div>
-                <div class="p-4">
-                    <div class="h-4 bg-slate-300 rounded w-3/4 mb-2"></div>
-                    <div class="h-3 bg-slate-200 rounded w-1/4"></div>
-                </div>
-            </NuxtLink>
+            <ShowCard v-for="i in 6" :key="i" layout="vertical" :show="{ title: 'Mystery Show ' + i, description: 'An intriguing story full of twists and language practice.', lvl: 'B1', tags: ['Mystery', 'Thriller'], ratingImdb: 7.5, ratingWeb: 4.2, img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80' }" />
         </div>
     </div>
 </template>
