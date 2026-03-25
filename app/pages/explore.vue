@@ -1,13 +1,13 @@
 <template>
     <div class="max-w-5xl mx-auto space-y-10">
         <!-- Top Search Bar -->
-        <div class="flex gap-4 max-w-2xl">
+        <form @submit.prevent="handleSearch" class="flex gap-4 max-w-2xl">
             <div class="relative flex-1">
                 <Search class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                <input type="text" placeholder="Search shows, vocabulary, or culture..." class="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl shadow-sm focus:ring-2 focus:ring-brand outline-none">
+                <input v-model="searchQuery" type="text" placeholder="Search shows, vocabulary, or culture..." class="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl shadow-sm focus:ring-2 focus:ring-brand outline-none">
             </div>
-            <button class="px-6 py-3 bg-slate-800 text-white font-medium rounded-xl hover:bg-slate-900 transition-colors shadow-sm">Search</button>
-        </div>
+            <button type="submit" class="px-6 py-3 bg-slate-800 text-white font-medium rounded-xl hover:bg-slate-900 transition-colors shadow-sm focus:ring-2 focus:ring-slate-900 focus:outline-none">Search</button>
+        </form>
 
         <!-- Recommended -->
         <section>
@@ -60,7 +60,19 @@
 <script setup>
 import { Search, Star, PlayCircle, Info, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import dutchShows from '~/data/dutch_shows.json'
+
+const router = useRouter()
+const searchQuery = ref('')
+
+const handleSearch = () => {
+    if (searchQuery.value.trim()) {
+        router.push({ path: '/search', query: { q: searchQuery.value.trim() } })
+    } else {
+        router.push('/search')
+    }
+}
 
 // Use the first show natively for the Recommended Hero banner
 const heroShow = dutchShows[0]
