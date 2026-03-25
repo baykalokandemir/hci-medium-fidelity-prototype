@@ -32,33 +32,22 @@
             </ShowCard>
         </section>
 
-        <!-- Trending Carousel -->
-        <section>
-            <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-4">
-                <TrendingUp class="w-5 h-5 text-pink-500" /> Currently Trending
-            </h2>
-            <div class="relative group">
-                <!-- Prev Navigation -->
-                <button @click="scrollPrev" class="absolute -left-5 top-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-slate-200 rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:text-brand hover:border-brand z-20 transition-all opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer hidden sm:flex">
-                    <ChevronLeft class="w-6 h-6" />
-                </button>
+        <ShowCarousel title="Currently Trending" :shows="dutchShows">
+            <template #icon><TrendingUp class="w-5 h-5 text-pink-500" /></template>
+        </ShowCarousel>
 
-                <!-- Scroll Window -->
-                <div ref="carouselRef" class="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6 pt-2 px-2 scroll-smooth">
-                    <ShowCard v-for="show in infiniteShows" :key="show.uniqueKey" :show="show" layout="vertical" class="w-[280px] min-w-[280px] flex-shrink-0 snap-start" />
-                </div>
+        <ShowCarousel title="Recommended in Romance" :shows="romanceShows">
+            <template #icon><Heart class="w-5 h-5 text-red-500 fill-red-500/20" /></template>
+        </ShowCarousel>
 
-                <!-- Next Navigation -->
-                <button @click="scrollNext" class="absolute -right-5 top-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-slate-200 rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:text-brand hover:border-brand z-20 transition-all opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer hidden sm:flex">
-                    <ChevronRight class="w-6 h-6" />
-                </button>
-            </div>
-        </section>
+        <ShowCarousel title="New in Cooking" :shows="cookingShows">
+            <template #icon><ChefHat class="w-5 h-5 text-orange-500" /></template>
+        </ShowCarousel>
     </div>
 </template>
 
 <script setup>
-import { Search, Star, PlayCircle, Info, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { Search, Star, PlayCircle, Info, TrendingUp, Heart, ChefHat } from 'lucide-vue-next'
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import dutchShows from '~/data/dutch_shows.json'
@@ -74,26 +63,10 @@ const handleSearch = () => {
     }
 }
 
+// Compute the filtered thematic carousels
+const romanceShows = computed(() => dutchShows.filter(s => s.tags?.includes('Romance')))
+const cookingShows = computed(() => dutchShows.filter(s => s.tags?.includes('Cooking')))
+
 // Use the first show natively for the Recommended Hero banner
 const heroShow = dutchShows[0]
-
-// Create a virtually infinite array to allow seamless scrolling for thousands of pixels
-const infiniteShows = computed(() => {
-    const duplicated = []
-    for (let i = 0; i < 50; i++) {
-        dutchShows.forEach(show => duplicated.push({ ...show, uniqueKey: i + '-' + show.id }))
-    }
-    return duplicated
-})
-
-// Carousel Action Controllers
-const carouselRef = ref(null)
-
-const scrollNext = () => {
-    if (carouselRef.value) carouselRef.value.scrollBy({ left: 304, behavior: 'smooth' }) // 280px card + 24px flex gap (gap-6)
-}
-
-const scrollPrev = () => {
-    if (carouselRef.value) carouselRef.value.scrollBy({ left: -304, behavior: 'smooth' })
-}
 </script>
