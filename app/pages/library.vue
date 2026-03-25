@@ -10,10 +10,11 @@
 
         <div class="space-y-4">
             <ShowCard 
-                v-for="show in shows" :key="show.title" 
+                v-for="show in myShows" :key="show.id" 
                 layout="horizontal"
-                :show="{ title: show.title, subtitle: show.episode, img: show.img, progress: libraryTab === 'completed' ? 100 : parseInt(show.progress) }" 
+                :show="{ id: show.id, title: show.title, subtitle: `Season ${show.currentSeason}, Episode ${show.currentEpisode}`, img: show.img, progress: libraryTab === 'completed' ? 100 : show.progress, seasons: show.seasons }" 
                 :progressColor="libraryTab === 'completed' ? 'bg-green-500' : 'bg-brand'"
+                :to="`/series/${show.id}`"
             >
                 <template #badge>
                     <span :class="[libraryTab === 'completed' ? 'bg-green-50 text-green-600 border-green-100' : 'bg-indigo-50 text-brand border-indigo-100', 'px-2.5 py-1 text-xs font-bold rounded border']">{{ tabs.find(t => t.id === libraryTab)?.label }}</span>
@@ -25,6 +26,7 @@
 
 <script setup>
 import { Bookmark } from 'lucide-vue-next'
+import dutchShows from '~/data/dutch_shows.json'
 
 const { libraryTab } = useAppState()
 
@@ -35,10 +37,27 @@ const tabs = [
     { id: 'history',     label: 'History' }
 ]
 
-const shows = [
-    { title: "City Chronicles", episode: "Season 1, Episode 3", img: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=400&q=80", progress: "40" },
-    { title: "Family Ties",     episode: "Season 2, Episode 7", img: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=400&q=80", progress: "75" },
-    { title: "Morning News",    episode: "Season 3, Episode 1", img: "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=400&q=80", progress: "15" },
-    { title: "The Great Bake",  episode: "Season 1, Episode 5", img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=400&q=80", progress: "90" }
+// Intelligently bind the interactive view to the offline database mock states
+const myShows = [
+    { 
+        ...dutchShows[0], // Undercover 
+        currentSeason: 2, currentEpisode: 2, 
+        progress: 45 // 45% of 3 seasons
+    },
+    { 
+        ...dutchShows[1], 
+        currentSeason: 1, currentEpisode: 4, 
+        progress: 66 // 66% of 1 season
+    },
+    { 
+        ...dutchShows[5], // Zondag Met Lubach
+        currentSeason: 5, currentEpisode: 10, 
+        progress: 38 // 38% of 13 seasons
+    },
+    { 
+        ...dutchShows[4], // Wie is de Mol
+        currentSeason: 20, currentEpisode: 2, 
+        progress: 83 // 83% of 24 seasons
+    }
 ]
 </script>

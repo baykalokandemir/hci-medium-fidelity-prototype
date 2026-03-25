@@ -38,7 +38,9 @@
                     </div>
                     <slot name="badge"></slot>
                 </div>
-                <ProgressBar v-if="show.progress !== undefined" :percentage="show.progress" :color="progressColor" class="mt-auto" />
+                <div v-if="show.progress !== undefined" class="mt-auto -mb-1">
+                    <ProgressBar :percentage="show.progress" :color="progressColor" :seasons="show.seasons" />
+                </div>
                 <slot name="extra"></slot>
             </div>
 
