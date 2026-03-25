@@ -16,16 +16,7 @@
             </h2>
             
             <ShowCard 
-                :show="{ 
-                    title: 'City Chronicles', 
-                    img: 'https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=1200&q=80', 
-                    description: 'A captivating drama series following daily life in the capital. Perfect for conversational practice and modern idioms.',
-                    lvl: 'B1',
-                    tags: ['Drama', 'Modern', 'Conversational'],
-                    recommendationReason: 'Contains excellent examples of formal vs informal workplace greetings and common B1 grammar structures.',
-                    ratingWeb: 4.8,
-                    ratingImdb: 8.5
-                }" 
+                :show="heroShow" 
                 layout="hero"
             >
                 <template #image-overlay>
@@ -69,19 +60,16 @@
 <script setup>
 import { Search, Star, PlayCircle, Info, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import { ref, computed } from 'vue'
+import dutchShows from '~/data/dutch_shows.json'
 
-const trendingShows = [
-    { title: "Morning News",  img: "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=400&q=80", lvl: "A2", tags: ["News", "Daily"], ratingWeb: 4.8, ratingImdb: 7.2, description: "Daily broadcasts covering global events.", progress: 25 },
-    { title: "The Great Bake", img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=400&q=80", lvl: "A1", tags: ["Cooking", "Reality"], ratingWeb: 4.5, ratingImdb: 8.0, description: "Amateur bakers compete in friendly challenges.", progress: 75 },
-    { title: "Police Dept",   img: "https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?auto=format&fit=crop&w=400&q=80", lvl: "B2", tags: ["Crime", "Action"], ratingWeb: 4.9, ratingImdb: 8.5, description: "Follow the intense cases of the central police unit.", progress: 50 },
-    { title: "Family Ties",   img: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=400&q=80", lvl: "B1", tags: ["Drama", "Comedy"], ratingWeb: 4.3, ratingImdb: 6.9, description: "A multi-generational family living under one roof.", progress: 100 }
-]
+// Use the first show natively for the Recommended Hero banner
+const heroShow = dutchShows[0]
 
 // Create a virtually infinite array to allow seamless scrolling for thousands of pixels
 const infiniteShows = computed(() => {
     const duplicated = []
     for (let i = 0; i < 50; i++) {
-        trendingShows.forEach(show => duplicated.push({ ...show, uniqueKey: i + '-' + show.title }))
+        dutchShows.forEach(show => duplicated.push({ ...show, uniqueKey: i + '-' + show.id }))
     }
     return duplicated
 })

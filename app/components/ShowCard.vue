@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink :to="to" :class="[
+    <NuxtLink :to="computedTo" :class="[
         'bg-white rounded-xl border border-slate-200 hover:shadow-md transition-shadow group block cursor-pointer overflow-hidden',
         layout === 'horizontal' ? 'p-4 flex flex-col sm:flex-row gap-6 items-center text-left' : 
         layout === 'hero' ? 'flex flex-col md:flex-row w-full min-h-[380px]' : 
@@ -7,13 +7,19 @@
     ]">
         <!-- Image Container -->
         <div :class="[
-            'relative overflow-hidden flex-shrink-0',
+            'relative overflow-hidden flex-shrink-0 bg-slate-100 flex flex-col items-center justify-center',
             layout === 'horizontal' ? 'w-full sm:w-48 aspect-video rounded-lg' : 
             layout === 'hero' ? 'w-full md:w-1/2 h-64 md:h-auto' :
             'h-2/3 w-full'
         ]">
-            <img :src="show.img" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <slot name="image-overlay"></slot>
+            <img v-if="!imageError" :src="show.img" @error="imageError = true" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0">
+            <div v-if="imageError" class="flex flex-col items-center justify-center text-slate-400 z-0 p-4">
+                <ImageOff class="w-8 h-8 mb-1.5 opacity-40" />
+                <span class="text-[10px] font-bold uppercase tracking-wider opacity-50 text-center">Picture Not Available</span>
+            </div>
+            <div class="relative z-10 w-full h-full pointer-events-none">
+                <slot name="image-overlay"></slot>
+            </div>
         </div>
         
         <!-- Content Container -->
@@ -99,9 +105,12 @@
 </template>
 
 <script setup>
-import { Star, Sparkles } from 'lucide-vue-next'
+import { ref, computed } from 'vue'
+import { Star, Sparkles, ImageOff } from 'lucide-vue-next'
 
-defineProps({
+const imageError = ref(false)
+
+const props = defineProps({
     show: {
         type: Object,
         required: true
@@ -118,5 +127,10 @@ defineProps({
         type: String,
         default: 'bg-brand'
     }
+})
+
+const computedTo = computed(() => {
+    if (props.to && props.to !== '/series') return props.to
+    return props.show?.id ? `/series/${props.show.id}` : '/series'
 })
 </script>

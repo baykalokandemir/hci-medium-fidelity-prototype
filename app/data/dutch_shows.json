@@ -1,0 +1,629 @@
+[
+  {
+    "id": "show_undercover",
+    "title": "Undercover",
+    "description": "One of the largest ecstasy producers in the world, Ferry Bouman, lives a charmed life in his villa on the Dutch-Belgian border. But things start to change when two undercover agents move into his territory.",
+    "ratingWeb": 4.8,
+    "ratingImdb": 7.8,
+    "language": "Dutch (Flemish)",
+    "level": "B2",
+    "tags": [
+      "Crime",
+      "Thriller",
+      "Action"
+    ],
+    "seasons": 3,
+    "totalEpisodes": 28,
+    "subtitles": [
+      "English",
+      "Dutch",
+      "French",
+      "German"
+    ],
+    "dubs": [
+      "English",
+      "French"
+    ],
+    "img": "https://picsum.photos/seed/show_undercover/800/450",
+    "recommendationReason": "Perfect for adapting your listening skills to Southern Dutch and Flemish accents.",
+    "reviews": [
+      {
+        "author": "Mark T.",
+        "date": "2 months ago",
+        "rating": 5,
+        "text": "The Flemish dialect is tough at first, but it's a fantastic show to train your ear to different accents!",
+        "helpfulCount": 24,
+        "avatarInitials": "MT"
+      },
+      {
+        "author": "Sarah L.",
+        "date": "1 week ago",
+        "rating": 4,
+        "text": "Great vocabulary for crime and police procedural topics. Highly recommended for B2+ learners.",
+        "helpfulCount": 12,
+        "avatarInitials": "SL"
+      },
+      {
+        "author": "Jake N.",
+        "date": "3 months ago",
+        "rating": 5,
+        "text": "Incredible tension and the subtitles matched perfectly with the spoken Dutch idioms.",
+        "helpfulCount": 3,
+        "avatarInitials": "JN"
+      }
+    ],
+    "episodes": [
+      {
+        "id": "ep_undercover_s1e1",
+        "season": 1,
+        "episodeNumber": 1,
+        "title": "Camping Zonnedauw",
+        "duration": "48m",
+        "img": "https://picsum.photos/seed/ep_undercover_s1e1/400/225",
+        "description": "Agents Bob and Kim go undercover at a campground to get close to drug kingpin Ferry Bouman.",
+        "languageNotes": [
+          {
+            "term": "Flik",
+            "definition": "Slang for 'Police officer' (mostly used in Flanders)."
+          },
+          {
+            "term": "Kampeerterrein",
+            "definition": "Campground or RV park."
+          },
+          {
+            "term": "Onderkoffer",
+            "definition": "Undercover (loan word from English)."
+          }
+        ],
+        "quizzes": [
+          {
+            "type": "multiple_choice",
+            "questionNumber": "Q1",
+            "title": "Story Comprehension",
+            "question": "What is Ferry Bouman's primary illegal business?",
+            "options": [
+              "Smuggling weapons",
+              "Producing ecstasy",
+              "Bank robbery",
+              "Car theft"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "He is known as one of the largest ecstasy producers in the world."
+          },
+          {
+            "type": "binary",
+            "questionNumber": "Q2",
+            "title": "Fact Check",
+            "question": "Bob and Kim are actually married in real life.",
+            "options": [
+              "True",
+              "False"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "They are only acting as a couple for their undercover assignment."
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Tom W.",
+            "date": "3 days ago",
+            "rating": 4,
+            "text": "Good intro episode. The slang takes some getting used to.",
+            "avatarInitials": "TW"
+          }
+        ]
+      },
+      {
+        "id": "ep_undercover_s1e2",
+        "season": 1,
+        "episodeNumber": 2,
+        "title": "Pill Mill",
+        "duration": "45m",
+        "img": "https://picsum.photos/seed/ep_undercover_s1e2/400/225",
+        "description": "Bob tries to negotiate a deal with Ferry to gain his trust in the syndicate.",
+        "languageNotes": [
+          {
+            "term": "Straatwaarde",
+            "definition": "Street value (of illegal goods)."
+          },
+          {
+            "term": "Verdachte",
+            "definition": "Suspect in a criminal investigation."
+          }
+        ],
+        "quizzes": [
+          {
+            "type": "multiple_choice",
+            "questionNumber": "Q1",
+            "title": "Vocabulary Test",
+            "question": "If you hear 'Verdachte' on the police radio, what do they mean?",
+            "options": [
+              "The victim",
+              "The suspect",
+              "The chief",
+              "The evidence"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Verdachte translates to 'Suspect' in English legal terms."
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Lucy H.",
+            "date": "1 month ago",
+            "rating": 5,
+            "text": "The pacing is brilliant. Learning so many new legal words.",
+            "avatarInitials": "LH"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "show_dirty_lines",
+    "title": "Dirty Lines",
+    "description": "In 1980s Amsterdam, a psychology student starts working at a company that is pioneering a brand new industry: phone sex lines. A great look at 80s Dutch culture and casual conversation.",
+    "ratingWeb": 4.5,
+    "ratingImdb": 7.4,
+    "language": "Dutch",
+    "level": "B1",
+    "tags": [
+      "Drama",
+      "History",
+      "Comedy"
+    ],
+    "seasons": 1,
+    "totalEpisodes": 6,
+    "subtitles": [
+      "English",
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_dirty_lines/800/450",
+    "recommendationReason": "Provides crystal clear standard Dutch with authentic historic Amsterdam dialect sprinkled deeply throughout.",
+    "reviews": [
+      {
+        "author": "Emma D.",
+        "date": "5 months ago",
+        "rating": 5,
+        "text": "Very clear Amsterdam accents. Much easier to understand than Undercover! The vocabulary is quite... specific though.",
+        "helpfulCount": 45,
+        "avatarInitials": "ED"
+      }
+    ],
+    "episodes": [
+      {
+        "id": "ep_dirty_s1e1",
+        "season": 1,
+        "episodeNumber": 1,
+        "title": "Hello, Teledutch",
+        "duration": "50m",
+        "img": "https://picsum.photos/seed/ep_dirty_s1e1/400/225",
+        "description": "Marly needs money and accepts a strange job recording audio tapes for the newly established Teledutch.",
+        "languageNotes": [
+          {
+            "term": "Studentenhuis",
+            "definition": "A house shared by university students, very typical in the Netherlands."
+          },
+          {
+            "term": "Bijbaantje",
+            "definition": "A side job or part-time job."
+          },
+          {
+            "term": "Gezellig",
+            "definition": "A famous untranslatable Dutch word meaning cozy, convivial, or pleasant."
+          }
+        ],
+        "quizzes": [
+          {
+            "type": "binary",
+            "questionNumber": "Q1",
+            "title": "Story Beat",
+            "question": "Marly's brothers founded the company.",
+            "options": [
+              "True",
+              "False"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The company was founded by the Stigter brothers; Marly is just an employee."
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Chris B.",
+            "date": "1 year ago",
+            "rating": 4,
+            "text": "Fun setting, but definitely not for kids. The cultural references to 1980s Holland are amazing.",
+            "avatarInitials": "CB"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "show_ares",
+    "title": "Ares",
+    "description": "A psychological horror series following a biracial medical student in Amsterdam who joins a secret, elite student society with a dark, terrifying history.",
+    "ratingWeb": 4.2,
+    "ratingImdb": 6.8,
+    "language": "Dutch",
+    "level": "C1",
+    "tags": [
+      "Horror",
+      "Thriller",
+      "Academic"
+    ],
+    "seasons": 1,
+    "totalEpisodes": 8,
+    "subtitles": [
+      "English",
+      "Dutch",
+      "Spanish"
+    ],
+    "dubs": [
+      "English"
+    ],
+    "img": "https://picsum.photos/seed/show_ares/800/450",
+    "recommendationReason": "Excellent resource for high-level (C1) academic and historic Dutch vocabulary structures.",
+    "reviews": [
+      {
+        "author": "David K.",
+        "date": "1 year ago",
+        "rating": 4,
+        "text": "Very formal, academic Dutch mixed with street slang. The plot is confusing but the language practice is intense.",
+        "helpfulCount": 18,
+        "avatarInitials": "DK"
+      }
+    ],
+    "episodes": [
+      {
+        "id": "ep_ares_s1e1",
+        "season": 1,
+        "episodeNumber": 1,
+        "title": "Episode 1",
+        "duration": "42m",
+        "img": "https://picsum.photos/seed/ep_ares_s1e1/400/225",
+        "description": "Rosa is invited to join Ares, a prestigious secret society built deep underneath Amsterdam.",
+        "languageNotes": [
+          {
+            "term": "Studentenvereniging",
+            "definition": "Fraternity/Sorority or student society."
+          },
+          {
+            "term": "Ontgroening",
+            "definition": "Hazing or initiation rituals."
+          }
+        ],
+        "quizzes": [
+          {
+            "type": "multiple_choice",
+            "questionNumber": "Q1",
+            "title": "Context Clues",
+            "question": "What is the primary activity happens during 'Ontgroening'?",
+            "options": [
+              "Studying",
+              "Hazing/Initiation",
+              "Graduation",
+              "Sleeping"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Ontgroening refers to the harsh initiation practices of fraternities."
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Anna P.",
+            "date": "4 months ago",
+            "rating": 5,
+            "text": "Absolutely terrifying, but Rosa's dialogue is so clear and easy to shadow.",
+            "avatarInitials": "AP"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "show_heel_holland_bakt",
+    "title": "Heel Holland Bakt",
+    "description": "Amateur bakers from across the Netherlands compete in a friendly atmosphere. Hosted by André van Duin, it's a relaxing watch perfect for learning kitchen vocabulary.",
+    "ratingWeb": 4.9,
+    "ratingImdb": 8.1,
+    "language": "Dutch",
+    "level": "A2",
+    "tags": [
+      "Cooking",
+      "Casual Conversation",
+      "Pop Culture"
+    ],
+    "seasons": 11,
+    "totalEpisodes": 95,
+    "subtitles": [
+      "Dutch",
+      "English"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_heel_holland_bakt/800/450",
+    "recommendationReason": "Excellent A2-level comprehensible input with highly predictable visual context and repetitive phrasing.",
+    "reviews": [
+      {
+        "author": "Julia",
+        "date": "1 week ago",
+        "rating": 5,
+        "text": "The pacing is slow and their pronunciation is super clear. Great for food vocab!",
+        "helpfulCount": 8,
+        "avatarInitials": "J"
+      }
+    ],
+    "episodes": []
+  },
+  {
+    "id": "show_nos_journaal",
+    "title": "NOS Journaal",
+    "description": "The daily evening news broadcast. An essential resource for intermediate and advanced learners to stay up to date on Dutch politics, economy, and global events.",
+    "ratingWeb": 4.7,
+    "ratingImdb": 7.5,
+    "language": "Dutch (Standard)",
+    "level": "B2",
+    "tags": [
+      "News",
+      "Politics",
+      "Economy"
+    ],
+    "seasons": 60,
+    "totalEpisodes": 999,
+    "subtitles": [
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_nos_journaal/800/450",
+    "recommendationReason": "The gold standard for 'Algemeen Beschaafd Nederlands' (Standard Dutch) pronunciation.",
+    "reviews": [],
+    "episodes": []
+  },
+  {
+    "id": "show_luizenmoeder",
+    "title": "De Luizenmoeder",
+    "description": "A satirical comedy set in a Dutch primary school. It brilliantly skewers workplace dynamics, modern parenting, and bizarre Dutch social rules.",
+    "ratingWeb": 4.8,
+    "ratingImdb": 8.3,
+    "language": "Dutch",
+    "level": "C1",
+    "tags": [
+      "Comedy",
+      "Workplace",
+      "Pop Culture"
+    ],
+    "seasons": 2,
+    "totalEpisodes": 20,
+    "subtitles": [
+      "English",
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_luizenmoeder/800/450",
+    "recommendationReason": "Teaches intense sarcasm, cultural norms, and rapid conversational office Dutch.",
+    "reviews": [],
+    "episodes": []
+  },
+  {
+    "id": "show_klokhuis",
+    "title": "Het Klokhuis",
+    "description": "An educational youth program answering questions about science, history, and the world. Features funny sketches and simple, highly engaging explanations.",
+    "ratingWeb": 5,
+    "ratingImdb": 8.5,
+    "language": "Dutch",
+    "level": "A2",
+    "tags": [
+      "Science",
+      "History",
+      "Documentary"
+    ],
+    "seasons": 35,
+    "totalEpisodes": 800,
+    "subtitles": [
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_klokhuis/800/450",
+    "recommendationReason": "Because it targets teenagers, complex science is explained with incredibly accessible A2 grammar.",
+    "reviews": [],
+    "episodes": []
+  },
+  {
+    "id": "show_wie_is_de_mol",
+    "title": "Wie is de Mol?",
+    "description": "Ten celebrities complete challenges to earn money for a group pot, but one is a traitor (the Mole) secretly sabotaging them.",
+    "ratingWeb": 4.9,
+    "ratingImdb": 8,
+    "language": "Dutch",
+    "level": "B1",
+    "tags": [
+      "Action",
+      "Reality",
+      "Travel"
+    ],
+    "seasons": 24,
+    "totalEpisodes": 240,
+    "subtitles": [
+      "English",
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_wie_is_de_mol/800/450",
+    "recommendationReason": "Excellent for practicing imperative commands, negotiation, and tense group discussions.",
+    "reviews": [],
+    "episodes": []
+  },
+  {
+    "id": "show_zondag_met_lubach",
+    "title": "Zondag met Lubach",
+    "description": "A satirical late-night talk show analyzing weekly news through a critical, highly comedic lens. Very fast-paced.",
+    "ratingWeb": 4.6,
+    "ratingImdb": 8.4,
+    "language": "Dutch",
+    "level": "C1",
+    "tags": [
+      "Politics",
+      "Comedy",
+      "News"
+    ],
+    "seasons": 13,
+    "totalEpisodes": 120,
+    "subtitles": [
+      "English",
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_zondag_met_lubach/800/450",
+    "recommendationReason": "Advanced listening test: rapid speech coupled with high-level political vocab and sarcasm.",
+    "reviews": [],
+    "episodes": []
+  },
+  {
+    "id": "show_rail_away",
+    "title": "Rail Away",
+    "description": "A tranquil documentary series following beautiful train routes across Europe. Features slow, poetic, descriptive narration.",
+    "ratingWeb": 4.4,
+    "ratingImdb": 7.9,
+    "language": "Dutch",
+    "level": "A2",
+    "tags": [
+      "Travel",
+      "Documentary",
+      "Listening Practice"
+    ],
+    "seasons": 25,
+    "totalEpisodes": 160,
+    "subtitles": [
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_rail_away/800/450",
+    "recommendationReason": "The narrator speaks exactly at A2 speed. Highly relaxing passive listening.",
+    "reviews": [],
+    "episodes": []
+  },
+  {
+    "id": "show_mocro_maffia",
+    "title": "Mocro Maffia",
+    "description": "A gritty, intense crime thriller following the brutal Amsterdam underworld. Heavy use of modern street slang spanning Dutch, Arabic, and Surinamese.",
+    "ratingWeb": 4.5,
+    "ratingImdb": 8.2,
+    "language": "Dutch (Street Slang)",
+    "level": "C2",
+    "tags": [
+      "Crime",
+      "Thriller",
+      "Slang"
+    ],
+    "seasons": 5,
+    "totalEpisodes": 40,
+    "subtitles": [
+      "English",
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_mocro_maffia/800/450",
+    "recommendationReason": "The ultimate test for modern Amsterdam street slang.",
+    "reviews": [],
+    "episodes": []
+  },
+  {
+    "id": "show_toon",
+    "title": "Toon",
+    "description": "A socially awkward musician accidentally creates a viral hit and is forced into the nightmare of navigating the music industry.",
+    "ratingWeb": 4.3,
+    "ratingImdb": 7.5,
+    "language": "Dutch",
+    "level": "B1",
+    "tags": [
+      "Comedy",
+      "Music",
+      "Conversation"
+    ],
+    "seasons": 2,
+    "totalEpisodes": 16,
+    "subtitles": [
+      "English",
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_toon/800/450",
+    "recommendationReason": "Awkward pauses make it easy to follow. Full of everyday Gen-Z native conversational phrases.",
+    "reviews": [],
+    "episodes": []
+  },
+  {
+    "id": "show_amsterdam_vice",
+    "title": "Amsterdam Vice",
+    "description": "Set in the 1980s, two detectives partner up in a turbulent Amsterdam filled with protests, squatters, and a changing society.",
+    "ratingWeb": 4.1,
+    "ratingImdb": 6.9,
+    "language": "Dutch",
+    "level": "B2",
+    "tags": [
+      "History",
+      "Action",
+      "Drama"
+    ],
+    "seasons": 1,
+    "totalEpisodes": 8,
+    "subtitles": [
+      "English",
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_amsterdam_vice/800/450",
+    "recommendationReason": "Rich historical Dutch terminology related to government and police systems.",
+    "reviews": [],
+    "episodes": []
+  },
+  {
+    "id": "show_tweede_hans",
+    "title": "Tweede Hans",
+    "description": "After a sudden forced retirement, Hans tries to find new meaning in his life through volunteering and a local choir.",
+    "ratingWeb": 4.4,
+    "ratingImdb": 7.6,
+    "language": "Dutch",
+    "level": "B1",
+    "tags": [
+      "Drama",
+      "Conversation",
+      "Romance"
+    ],
+    "seasons": 1,
+    "totalEpisodes": 6,
+    "subtitles": [
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_tweede_hans/800/450",
+    "recommendationReason": "Excellent resource for hearing older generational Dutch idioms and polite society interactions.",
+    "reviews": [],
+    "episodes": []
+  },
+  {
+    "id": "show_spoorloos",
+    "title": "Spoorloos",
+    "description": "A heart-wrenching documentary series searching for lost biological relatives across the globe.",
+    "ratingWeb": 4.7,
+    "ratingImdb": 8.1,
+    "language": "Dutch / English",
+    "level": "B1",
+    "tags": [
+      "Documentary",
+      "Romance",
+      "Travel"
+    ],
+    "seasons": 30,
+    "totalEpisodes": 300,
+    "subtitles": [
+      "Dutch"
+    ],
+    "dubs": [],
+    "img": "https://picsum.photos/seed/show_spoorloos/800/450",
+    "recommendationReason": "Emotional storytelling involves a lot of past-tense grammar usage (Voltooid Tegenwoordige Tijd).",
+    "reviews": [],
+    "episodes": []
+  }
+]
