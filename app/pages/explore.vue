@@ -41,20 +41,34 @@
             </ShowCard>
         </section>
 
-        <!-- Trending -->
+        <!-- Trending Carousel -->
         <section>
             <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-4">
                 <TrendingUp class="w-5 h-5 text-pink-500" /> Currently Trending
             </h2>
-            <div class="flex gap-6 overflow-x-auto pb-6 hide-scrollbar">
-                <ShowCard v-for="show in trendingShows" :key="show.title" :show="show" layout="vertical" class="min-w-[280px]" />
+            <div class="relative group">
+                <!-- Prev Navigation -->
+                <button @click="scrollPrev" class="absolute -left-5 top-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-slate-200 rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:text-brand hover:border-brand z-20 transition-all opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer hidden sm:flex">
+                    <ChevronLeft class="w-6 h-6" />
+                </button>
+
+                <!-- Scroll Window -->
+                <div ref="carouselRef" class="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6 pt-2 px-2 scroll-smooth">
+                    <ShowCard v-for="show in infiniteShows" :key="show.uniqueKey" :show="show" layout="vertical" class="w-[280px] min-w-[280px] flex-shrink-0 snap-start" />
+                </div>
+
+                <!-- Next Navigation -->
+                <button @click="scrollNext" class="absolute -right-5 top-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-slate-200 rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:text-brand hover:border-brand z-20 transition-all opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer hidden sm:flex">
+                    <ChevronRight class="w-6 h-6" />
+                </button>
             </div>
         </section>
     </div>
 </template>
 
 <script setup>
-import { Search, Star, PlayCircle, Info, TrendingUp } from 'lucide-vue-next'
+import { Search, Star, PlayCircle, Info, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { ref, computed } from 'vue'
 
 const trendingShows = [
     { title: "Morning News",  img: "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=400&q=80", lvl: "A2", tags: ["News", "Daily"], ratingWeb: 4.8, ratingImdb: 7.2, description: "Daily broadcasts covering global events.", progress: 25 },
@@ -62,4 +76,24 @@ const trendingShows = [
     { title: "Police Dept",   img: "https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?auto=format&fit=crop&w=400&q=80", lvl: "B2", tags: ["Crime", "Action"], ratingWeb: 4.9, ratingImdb: 8.5, description: "Follow the intense cases of the central police unit.", progress: 50 },
     { title: "Family Ties",   img: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=400&q=80", lvl: "B1", tags: ["Drama", "Comedy"], ratingWeb: 4.3, ratingImdb: 6.9, description: "A multi-generational family living under one roof.", progress: 100 }
 ]
+
+// Create a virtually infinite array to allow seamless scrolling for thousands of pixels
+const infiniteShows = computed(() => {
+    const duplicated = []
+    for (let i = 0; i < 50; i++) {
+        trendingShows.forEach(show => duplicated.push({ ...show, uniqueKey: i + '-' + show.title }))
+    }
+    return duplicated
+})
+
+// Carousel Action Controllers
+const carouselRef = ref(null)
+
+const scrollNext = () => {
+    if (carouselRef.value) carouselRef.value.scrollBy({ left: 304, behavior: 'smooth' }) // 280px card + 24px flex gap (gap-6)
+}
+
+const scrollPrev = () => {
+    if (carouselRef.value) carouselRef.value.scrollBy({ left: -304, behavior: 'smooth' })
+}
 </script>

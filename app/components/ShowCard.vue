@@ -3,7 +3,7 @@
         'bg-white rounded-xl border border-slate-200 hover:shadow-md transition-shadow group block cursor-pointer overflow-hidden',
         layout === 'horizontal' ? 'p-4 flex flex-col sm:flex-row gap-6 items-center text-left' : 
         layout === 'hero' ? 'flex flex-col md:flex-row w-full min-h-[380px]' : 
-        'flex flex-col h-[420px] w-full'
+        'flex flex-col h-[420px]'
     ]">
         <!-- Image Container -->
         <div :class="[
