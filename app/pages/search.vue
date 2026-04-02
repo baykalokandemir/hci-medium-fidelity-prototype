@@ -27,12 +27,16 @@
             <select class="px-4 py-2 border border-slate-300 rounded-lg text-sm outline-none"><option>Format</option></select>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <ShowCard v-for="i in 6" :key="i" layout="vertical" :show="{ title: 'Mystery Show ' + i, description: 'An intriguing story full of twists and language practice.', lvl: 'B1', tags: ['Mystery', 'Thriller'], ratingImdb: 7.5, ratingWeb: 4.2, img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80' }" />
+        <div class="flex flex-col gap-4">
+            <ShowCard v-for="show in searchResults" :key="show.id" layout="horizontal" :show="show" />
         </div>
     </div>
 </template>
 
 <script setup>
 import { Search } from 'lucide-vue-next'
+import dutchShows from '~/data/dutch_shows.json'
+
+// Retrieve 6 shows to act as our simulated search results
+const searchResults = dutchShows.slice(0, 6)
 </script>

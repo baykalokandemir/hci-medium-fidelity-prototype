@@ -12,6 +12,7 @@
     - Search button is now purple
     - Search bar is larger to match the elements on the page
     - Added a sparkles button to the search bar that toggles a tooltip, which lets the user enable or disable natural language search
+- Search hub now displays results in a list instead of a 3x2 grid.
 
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
