@@ -9,7 +9,7 @@
         <div :class="[
             'relative overflow-hidden flex-shrink-0 bg-slate-100 flex flex-col items-center justify-center',
             layout === 'horizontal' ? 'w-full sm:w-48 aspect-video rounded-lg' : 
-            layout === 'hero' ? 'w-full md:w-1/2 h-64 md:h-auto' :
+            layout === 'hero' ? 'w-full md:w-2/5 h-64 md:h-auto' :
             'w-1/3 h-full'
         ]">
             <img v-if="!imageError" :src="show.img" @error="imageError = true" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0">
@@ -26,7 +26,7 @@
         <div :class="[
             'bg-white flex flex-col',
             layout === 'horizontal' ? 'flex-1 w-full' : 
-            layout === 'hero' ? 'flex-1 w-full md:w-1/2 p-6 sm:p-10 relative z-10 justify-center' :
+            layout === 'hero' ? 'flex-1 w-full md:w-3/5 p-6 sm:p-10 relative z-10 justify-center' :
             'w-2/3 h-full p-4 relative z-10 justify-between'
         ]">
             <!-- Horizontal Content -->
@@ -46,14 +46,14 @@
 
             <!-- Hero Content -->
             <div v-else-if="layout === 'hero'" class="flex flex-col h-full justify-center">
+                <h3 class="text-2xl md:text-3xl lg:text-4xl font-black text-slate-800 mb-2 leading-tight group-hover:text-brand transition-colors">{{ show.title }}</h3>
+                
                 <div class="flex items-center gap-2 mb-4">
                     <span v-if="show.lvl" class="px-2.5 py-1 bg-brand text-white text-[10px] md:text-xs font-bold rounded uppercase flex-shrink-0">{{ show.lvl }}</span>
                     <div v-if="show.tags" class="flex flex-wrap gap-1.5">
                         <span v-for="tag in show.tags" :key="tag" class="px-2.5 py-1 bg-slate-100 text-slate-600 text-[10px] md:text-xs font-medium rounded whitespace-nowrap">{{ tag }}</span>
                     </div>
                 </div>
-                
-                <h3 class="text-2xl md:text-3xl lg:text-4xl font-black text-slate-800 mb-2 leading-tight group-hover:text-brand transition-colors">{{ show.title }}</h3>
                 
                 <div class="flex items-center gap-3 mb-3">
                     <span v-if="show.ratingWeb" class="flex items-center gap-1 text-xs font-bold text-slate-700 leading-none">
@@ -66,9 +66,9 @@
 
                 <p class="text-sm md:text-base text-slate-600 line-clamp-2 md:line-clamp-3 mb-5 leading-relaxed">{{ show.description || show.subtitle }}</p>
 
-                <div v-if="show.recommendationReason" class="bg-indigo-50/80 border border-indigo-100 border-l-4 border-l-brand p-4 rounded-r-xl mb-6 shadow-sm">
+                <div v-if="show.recommendationReason" class="bg-yellow-50/80 border border-yellow-100 border-l-4 border-l-yellow-400 p-4 rounded-r-xl mb-6 shadow-sm">
                     <p class="text-sm text-slate-700 leading-relaxed font-medium">
-                        <strong class="font-bold flex items-center gap-1.5 mb-1 text-brand"><Sparkles class="w-4 h-4 text-brand" /> Why we chose this for you:</strong>
+                        <strong class="font-bold flex items-center gap-1.5 mb-1 text-yellow-600"><Sparkles class="w-4 h-4 text-yellow-500" /> Why we chose this for you:</strong>
                         {{ show.recommendationReason }}
                     </p>
                 </div>

@@ -2,7 +2,13 @@
 
 **Note:** This branch is currently being used for A/B testing. Changes are:
 - Bookmark button on series page says "Save to Library"
-- ShowCard is now horizontal instead of vertical
+- ShowCard is now horizontal instead of vertical for carousels
+- Small changes to the recomennded show card
+    - Image/content split is now 2/5 and 3/5 instead of 1/2 and 1/2 respectively
+    - Tags moved under title
+    - Recommendation reason now has a yellow border instead of blue
+    - View details button is now purple and filled
+
 
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.

@@ -25,7 +25,7 @@
                     </div>
                 </template>
                 <template #extra>
-                    <button class="px-6 py-3 border-2 border-slate-200 hover:border-brand hover:text-brand bg-white text-slate-800 font-semibold rounded-xl transition-colors w-max flex items-center gap-2">
+                    <button class="px-6 py-3 bg-brand hover:bg-brand-light text-white font-semibold rounded-xl transition-colors w-max flex items-center gap-2 shadow-sm focus:ring-2 focus:ring-brand focus:outline-none">
                         <Info class="w-5 h-5" /> View Details
                     </button>
                 </template>
