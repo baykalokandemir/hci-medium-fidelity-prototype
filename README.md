@@ -1,4 +1,7 @@
-# Nuxt Minimal Starter
+# Nuxt Minimal Starter (A/B Testing Branch)
+
+**Note:** This branch is currently being used for A/B testing.
+Specifically, on the Series page, the bookmark button has been updated to explicitly say "Save to Library" alongside the icon, rather than just being an icon on its own.
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 

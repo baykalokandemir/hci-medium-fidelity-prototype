@@ -38,8 +38,8 @@
                                 <NuxtLink v-if="show.episodes && show.episodes.length > 0" :to="`/episode/${show.episodes[0].id}`" class="px-6 py-3.5 bg-brand hover:bg-brand-light text-white font-bold rounded-xl flex items-center gap-2 transition-transform shadow-lg hover:scale-105 active:scale-95">
                                     <Play class="w-5 h-5 fill-current" /> Play S1 E1
                                 </NuxtLink>
-                                <button @click.stop="openSaveListModal" class="p-3.5 bg-white/20 hover:bg-white/30 backdrop-blur rounded-xl transition-all hover:scale-105 text-white shadow-lg">
-                                    <Bookmark class="w-5 h-5" />
+                                <button @click.stop="toggleSave" class="px-6 py-3.5 bg-white/20 hover:bg-white/30 backdrop-blur font-bold rounded-xl flex items-center gap-2 transition-all hover:scale-105 active:scale-95 text-white shadow-lg">
+                                    Save to Library <Bookmark class="w-5 h-5" :class="{ 'fill-yellow-400 text-yellow-400': isSaved }" />
                                 </button>
                             </div>
                         </div>
@@ -117,6 +117,12 @@ import { useRoute } from 'vue-router'
 import dutchShows from '~/data/dutch_shows.json'
 
 const { openSaveListModal } = useAppState()
+
+const isSaved = ref(false)
+const toggleSave = () => {
+    isSaved.value = !isSaved.value
+    openSaveListModal()
+}
 const route = useRoute()
 const showId = route.params.id
 
