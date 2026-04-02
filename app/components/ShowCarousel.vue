@@ -11,7 +11,7 @@
             </button>
 
             <div ref="carouselRef" class="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6 pt-2 px-2 scroll-smooth">
-                <ShowCard v-for="show in infiniteShows" :key="show.uniqueKey" :show="show" layout="vertical" class="w-[280px] min-w-[280px] flex-shrink-0 snap-start" />
+                <ShowCard v-for="show in infiniteShows" :key="show.uniqueKey" :show="show" layout="vertical" class="w-[85vw] sm:w-[400px] min-w-[85vw] sm:min-w-[400px] flex-shrink-0 snap-start" />
             </div>
 
             <button @click="scrollNext" class="absolute -right-5 top-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-slate-200 rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:text-brand hover:border-brand z-20 transition-all opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer hidden sm:flex">
@@ -50,10 +50,10 @@ const infiniteShows = computed(() => {
 const carouselRef = ref(null)
 
 const scrollNext = () => {
-    if (carouselRef.value) carouselRef.value.scrollBy({ left: 304, behavior: 'smooth' }) // 280px card + 24px gap
+    if (carouselRef.value) carouselRef.value.scrollBy({ left: 424, behavior: 'smooth' }) // 400px card + 24px gap
 }
 
 const scrollPrev = () => {
-    if (carouselRef.value) carouselRef.value.scrollBy({ left: -304, behavior: 'smooth' })
+    if (carouselRef.value) carouselRef.value.scrollBy({ left: -424, behavior: 'smooth' })
 }
 </script>

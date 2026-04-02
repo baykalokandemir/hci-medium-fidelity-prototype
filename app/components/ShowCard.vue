@@ -3,14 +3,14 @@
         'bg-white rounded-xl border border-slate-200 hover:shadow-md transition-shadow group block cursor-pointer overflow-hidden',
         layout === 'horizontal' ? 'p-4 flex flex-col sm:flex-row gap-6 items-center text-left' : 
         layout === 'hero' ? 'flex flex-col md:flex-row w-full min-h-[380px]' : 
-        'flex flex-col h-[420px]'
+        'flex flex-row aspect-[2/1]'
     ]">
         <!-- Image Container -->
         <div :class="[
             'relative overflow-hidden flex-shrink-0 bg-slate-100 flex flex-col items-center justify-center',
             layout === 'horizontal' ? 'w-full sm:w-48 aspect-video rounded-lg' : 
             layout === 'hero' ? 'w-full md:w-1/2 h-64 md:h-auto' :
-            'h-2/3 w-full'
+            'w-1/3 h-full'
         ]">
             <img v-if="!imageError" :src="show.img" @error="imageError = true" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0">
             <div v-if="imageError" class="flex flex-col items-center justify-center text-slate-400 z-0 p-4">
@@ -27,7 +27,7 @@
             'bg-white flex flex-col',
             layout === 'horizontal' ? 'flex-1 w-full' : 
             layout === 'hero' ? 'flex-1 w-full md:w-1/2 p-6 sm:p-10 relative z-10 justify-center' :
-            'h-1/3 w-full p-4 relative z-10 justify-between'
+            'w-2/3 h-full p-4 relative z-10 justify-between'
         ]">
             <!-- Horizontal Content -->
             <div v-if="layout === 'horizontal'" class="flex flex-col h-full">
@@ -76,31 +76,35 @@
                 <slot name="extra"></slot>
             </div>
 
-            <!-- Vertical / Grid Content (2/3 & 1/3 Split) -->
+            <!-- Default Content (1/3 & 2/3 Split) -->
             <div v-else class="flex flex-col h-full">
-                <!-- Top row: Tags & Difficulty -->
-                <div class="flex items-center gap-2 mb-2 overflow-hidden">
-                    <span v-if="show.lvl" class="px-2 py-0.5 bg-brand text-white text-[10px] font-bold rounded flex-shrink-0 uppercase">{{ show.lvl }}</span>
-                    <div v-if="show.tags" class="flex gap-1 overflow-hidden">
-                        <span v-for="tag in show.tags" :key="tag" class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-medium rounded whitespace-nowrap">{{ tag }}</span>
-                    </div>
-                </div>
-                
                 <!-- Title & Ratings row -->
-                <div class="flex justify-between items-start mb-1">
-                    <h4 class="font-bold text-slate-800 text-base leading-tight group-hover:text-brand transition-colors truncate pr-2">{{ show.title || 'Untitled Series' }}</h4>
-                    <div class="flex flex-col items-end gap-1 flex-shrink-0">
-                        <span v-if="show.ratingWeb" class="flex items-center gap-1 text-[10px] font-bold text-slate-700 leading-none">
-                            <Star class="w-2.5 h-2.5 text-yellow-500 fill-current" /> {{ show.ratingWeb }}
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="font-bold text-slate-800 text-xl leading-tight group-hover:text-brand transition-colors truncate pr-2">{{ show.title || 'Untitled Series' }}</h4>
+                    <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                        <span v-if="show.ratingWeb" class="flex items-center gap-1 text-xs font-bold text-slate-700 leading-none">
+                            <Star class="w-3.5 h-3.5 text-yellow-500 fill-current" /> {{ show.ratingWeb }}
                         </span>
-                        <span v-if="show.ratingImdb" class="text-[9px] font-black text-slate-900 bg-yellow-400 px-1 rounded leading-tight">
+                        <span v-if="show.ratingImdb" class="text-[10px] font-black text-slate-900 bg-yellow-400 px-1.5 py-0.5 rounded leading-tight">
                             IMDb {{ show.ratingImdb }}
                         </span>
                     </div>
                 </div>
                 
+                <!-- Tags & Difficulty -->
+                <div class="flex items-center gap-2 mb-3 overflow-hidden">
+                    <span v-if="show.lvl" class="px-2 py-0.5 bg-brand text-white text-xs font-bold rounded flex-shrink-0 uppercase">{{ show.lvl }}</span>
+                    <div v-if="show.tags" class="flex gap-1.5 overflow-hidden">
+                        <span v-for="tag in show.tags" :key="tag" class="px-2.5 py-0.5 bg-slate-100 text-slate-600 text-xs font-medium rounded whitespace-nowrap">{{ tag }}</span>
+                    </div>
+                </div>
+                
                 <!-- Description -->
-                <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed mt-auto">{{ show.description || show.subtitle }}</p>
+                <p class="text-sm text-slate-600 line-clamp-2 leading-relaxed mb-4">{{ show.description || show.subtitle }}</p>
+                
+                <div class="mt-auto self-end flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-brand border border-brand/30 bg-indigo-50/50 hover:bg-indigo-50 hover:border-brand/50 rounded-lg transition-all w-max shadow-sm">
+                    <Info class="w-3.5 h-3.5" /> View Details
+                </div>
             </div>
         </div>
     </NuxtLink>
@@ -108,7 +112,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { Star, Sparkles, ImageOff } from 'lucide-vue-next'
+import { Star, Sparkles, ImageOff, Info } from 'lucide-vue-next'
 
 const imageError = ref(false)
 
