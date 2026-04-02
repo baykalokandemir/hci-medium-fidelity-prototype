@@ -8,7 +8,10 @@
     - Tags moved under title
     - Recommendation reason now has a yellow border instead of blue
     - View details button is now purple and filled
-
+- Small changes to the search bar
+    - Search button is now purple
+    - Search bar is larger to match the elements on the page
+    - Added a sparkles button to the search bar that toggles a tooltip, which lets the user enable or disable natural language search
 
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
